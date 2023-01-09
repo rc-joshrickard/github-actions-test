@@ -1,0 +1,16 @@
+name: Code Quality & Tests
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - tests/**
+  schedule:
+    - cron: "0 21,13 * * *"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Python package version'
+        required: true
+        default: '1.0.0'
